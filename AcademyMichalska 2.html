@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Academy of Hair and Beauty · Gdańsk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --black: #0a0a0a; --white: #f8f8f6; --gray-light: #e8e8e6; --gray-mid: #999; --gray-dark: #333; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+
+.nav { background: var(--black); padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--white); letter-spacing: 2px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+.nav-links a { color: #aaa; text-decoration: none; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-social { display: flex; gap: 8px; }
+.social-btn { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #333; color: #888; text-decoration: none; transition: all 0.2s; font-size: 14px; }
+.social-btn:hover { border-color: var(--white); color: var(--white); }
+.nav-cta { background: var(--white); color: var(--black); border: none; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.nav-cta:hover { background: #ddd; }
+
+.ticker-wrap { background: var(--black); border-top: 1px solid #1a1a1a; overflow: hidden; padding: 10px 0; }
+.ticker-track { display: flex; width: max-content; animation: ticker 40s linear infinite; }
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #777; padding: 0 36px; white-space: nowrap; }
+.ticker-item span { color: var(--white); margin-right: 8px; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.hero { background: var(--black); color: var(--white); padding: 80px 60px 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.hero-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #555; margin-bottom: 18px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 54px; line-height: 1.05; font-weight: 400; margin-bottom: 22px; }
+.hero h1 em { font-style: italic; color: #ccc; }
+.hero-desc { font-size: 12px; color: #777; line-height: 1.9; margin-bottom: 32px; max-width: 360px; }
+.hero-btns { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.btn-primary { background: var(--white); color: var(--black); border: none; padding: 13px 26px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.btn-primary:hover { background: #ddd; }
+.btn-maps { background: transparent; color: #888; border: 1px solid #333; padding: 13px 20px; font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; text-decoration: none; transition: all 0.2s; }
+.btn-maps:hover { border-color: #777; color: var(--white); }
+.hero-right { border-left: 1px solid #1a1a1a; padding-left: 60px; display: flex; flex-direction: column; gap: 28px; }
+.stat-row { display: flex; gap: 36px; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 700; line-height: 1; }
+.stat-label { font-size: 9px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
+.hero-addr { font-size: 11px; color: #444; border-top: 1px solid #1a1a1a; padding-top: 18px; line-height: 1.8; }
+.hero-social { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+.hero-social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid #222; color: #888; text-decoration: none; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.2s; }
+.hero-social-btn:hover { border-color: #555; color: var(--white); }
+
+.gallery-section { padding: 70px 60px; background: #0d0d0d; }
+.section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; padding-bottom: 16px; border-bottom: 1px solid #1a1a1a; }
+.section-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #555; margin-bottom: 7px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; color: var(--white); }
+.section-link { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #555; text-decoration: none; transition: color 0.2s; }
+.section-link:hover { color: var(--white); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.gallery-item { aspect-ratio: 3/4; background: #1a1a1a; position: relative; overflow: hidden; cursor: pointer; }
+.gallery-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.gallery-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #333; transition: background 0.2s; min-height: 180px; }
+.gallery-item:hover .gallery-placeholder { background: #222; }
+.gallery-item:first-child .gallery-placeholder { min-height: 360px; }
+.gallery-icon { font-size: 28px; color: #2a2a2a; }
+.gallery-text { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #2a2a2a; text-align: center; }
+.gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 20px 16px 14px; opacity: 0; transition: opacity 0.2s; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay-text { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #aaa; }
+.gallery-upload-hint { margin-top: 16px; font-size: 10px; color: #333; letter-spacing: 2px; text-transform: uppercase; text-align: center; padding: 12px; border: 1px dashed #222; }
+
+.services-section { padding: 70px 60px; background: var(--white); }
+.section-header-light { border-bottom-color: var(--gray-light) !important; }
+.section-title-dark { color: var(--black) !important; }
+.cat-tabs { display: flex; overflow-x: auto; margin-bottom: 26px; border: 1px solid var(--gray-light); }
+.cat-tab { padding: 11px 18px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-right: 1px solid var(--gray-light); background: var(--white); color: var(--gray-mid); font-family: 'Montserrat', sans-serif; border-top: none; border-bottom: none; border-left: none; white-space: nowrap; }
+.cat-tab:last-child { border-right: none; }
+.cat-tab.active, .cat-tab:hover { background: var(--black); color: var(--white); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; background: var(--gray-light); border: 1px solid var(--gray-light); }
+.service-card { background: var(--white); padding: 26px 22px; cursor: pointer; transition: background 0.15s; position: relative; }
+.service-card:hover { background: var(--black); }
+.service-card:hover .service-name, .service-card:hover .service-price { color: var(--white); }
+.service-card:hover .service-time { color: #666; }
+.service-name { font-family: 'Playfair Display', serif; font-size: 14px; margin-bottom: 8px; color: var(--black); line-height: 1.3; transition: color 0.15s; }
+.service-price { font-size: 13px; font-weight: 600; color: var(--black); transition: color 0.15s; }
+.service-time { font-size: 10px; color: var(--gray-mid); letter-spacing: 1px; margin-top: 4px; transition: color 0.15s; }
+.service-tag { position: absolute; top: 10px; right: 10px; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; background: var(--black); color: var(--white); padding: 3px 6px; }
+.service-card:hover .service-tag { background: var(--white); color: var(--black); }
+
+.care-section { padding: 70px 60px; background: #0d0d0d; color: var(--white); }
+.care-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #1a1a1a; }
+.care-card { background: #0d0d0d; padding: 30px 26px; border-left: 2px solid transparent; transition: border-color 0.2s; }
+.care-card:hover { border-left-color: var(--white); }
+.care-card-num { font-family: 'Playfair Display', serif; font-size: 32px; color: #1e1e1e; margin-bottom: 14px; font-weight: 700; }
+.care-card-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; margin-bottom: 9px; }
+.care-card-desc { font-size: 11px; color: #555; line-height: 1.7; margin-bottom: 12px; }
+.care-card-price { font-size: 13px; font-weight: 600; color: #aaa; }
+
+.location-section { padding: 70px 60px; background: var(--white); }
+.location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-light); }
+.location-map { background: #1a1a1a; min-height: 380px; position: relative; overflow: hidden; }
+.map-embed { width: 100%; height: 100%; min-height: 380px; border: none; filter: grayscale(100%) contrast(1.1); }
+.location-info { background: var(--black); color: var(--white); padding: 50px 44px; display: flex; flex-direction: column; justify-content: space-between; }
+.loc-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 10px; }
+.loc-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 28px; line-height: 1.2; }
+.loc-detail { font-size: 12px; color: #666; line-height: 2; margin-bottom: 28px; }
+.loc-detail strong { color: #aaa; font-weight: 500; }
+.maps-big-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--white); color: var(--black); padding: 16px 28px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background 0.2s; margin-bottom: 20px; border: none; }
+.maps-big-btn:hover { background: #ddd; }
+.social-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.social-pill { display: flex; align-items: center; gap: 8px; padding: 11px 18px; border: 1px solid #222; color: #888; text-decoration: none; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.2s; flex: 1; justify-content: center; }
+.social-pill:hover { border-color: #555; color: var(--white); }
+.booksy-pill { background: #111; }
+
+.reviews-section { padding: 70px 60px; background: var(--white); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--gray-light); }
+.review-card { background: var(--white); padding: 26px 24px; }
+.review-stars { font-size: 11px; letter-spacing: 3px; margin-bottom: 12px; }
+.review-text { font-size: 13px; line-height: 1.75; color: var(--gray-dark); margin-bottom: 16px; font-style: italic; font-family: 'Playfair Display', serif; }
+.review-meta { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); }
+.review-service { font-size: 10px; color: #ccc; margin-top: 3px; }
+
+footer { background: var(--black); color: var(--white); padding: 50px 60px 30px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; border-top: 1px solid #111; }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 14px; font-weight: 400; }
+.footer-desc { font-size: 11px; color: #444; line-height: 1.9; margin-bottom: 22px; }
+.footer-social { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.footer-social-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px; border: 1px solid #1e1e1e; color: #666; text-decoration: none; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.2s; }
+.footer-social-btn:hover { border-color: #555; color: var(--white); }
+.footer-col-title { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; margin-bottom: 18px; }
+.footer-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-list li { font-size: 11px; color: #666; line-height: 1.5; }
+.footer-bottom { background: var(--black); padding: 18px 60px; border-top: 1px solid #0f0f0f; display: flex; justify-content: space-between; font-size: 9px; color: #333; letter-spacing: 1px; }
+
+/* ===== MOBILE HAMBURGER ===== */
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 22px; height: 1px; background: #888; transition: all 0.3s; }
+.nav-mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--black); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a { color: #aaa; text-decoration: none; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; padding: 6px 0; }
+.nav-mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: #666; font-size: 28px; cursor: pointer; line-height: 1; }
+.nav-mobile-socials { display: flex; gap: 14px; margin-top: 10px; }
+.nav-mobile-socials a { color: #555; text-decoration: none; font-size: 20px; border: 1px solid #222; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; }
+
+@media (max-width: 768px) {
+  .nav { padding: 14px 20px; }
+  .nav-logo { font-size: 11px; letter-spacing: 1px; max-width: 180px; line-height: 1.4; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+
+  .ticker-item { font-size: 9px; padding: 0 20px; letter-spacing: 1.5px; }
+
+  .hero { grid-template-columns: 1fr; padding: 40px 20px 36px; gap: 32px; }
+  .hero h1 { font-size: 36px; }
+  .hero-desc { font-size: 12px; max-width: 100%; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-maps { text-align: center; justify-content: center; width: 100%; padding: 14px 20px; }
+  .hero-social { gap: 8px; }
+  .hero-social-btn { flex: 1; justify-content: center; padding: 10px 8px; font-size: 9px; letter-spacing: 1px; }
+  .hero-right { border-left: none; border-top: 1px solid #1a1a1a; padding-left: 0; padding-top: 28px; gap: 20px; }
+  .stat-num { font-size: 34px; }
+
+  .gallery-section { padding: 40px 20px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+  .gallery-item:first-child .gallery-placeholder { min-height: 150px; }
+  .gallery-placeholder { min-height: 120px; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .section-title { font-size: 26px; }
+  .section-link { font-size: 9px; }
+
+  .services-section { padding: 40px 20px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service-card { padding: 18px 14px; }
+  .service-name { font-size: 13px; }
+
+  .care-section { padding: 40px 20px; }
+  .care-grid { grid-template-columns: 1fr; }
+  .care-card { padding: 24px 20px; }
+
+  .location-section { padding: 40px 20px; }
+  .location-grid { grid-template-columns: 1fr; }
+  .location-map { min-height: 240px; }
+  .map-embed { min-height: 240px; }
+  .location-info { padding: 28px 22px; gap: 22px; }
+  .loc-title { font-size: 22px; margin-bottom: 16px; }
+  .social-row { flex-wrap: wrap; }
+  .social-pill { flex: 1 1 calc(50% - 5px); font-size: 9px; padding: 10px 8px; justify-content: center; }
+
+  .reviews-section { padding: 40px 20px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  footer { grid-template-columns: 1fr; padding: 36px 20px 22px; gap: 28px; }
+  .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 8px; text-align: center; }
+  .footer-social { flex-wrap: wrap; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 30px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .hero-social { flex-direction: column; }
+  .hero-social-btn { justify-content: center; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item:first-child { grid-column: span 1; }
+  .social-pill { flex: 1 1 100%; }
+}
+
+/* ===== COOKIE BANNER ===== */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: #111; border-top: 1px solid #222;
+  padding: 18px 40px; display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  transform: translateY(100%); transition: transform 0.4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-text { font-size: 11px; color: #888; line-height: 1.7; flex: 1; min-width: 200px; }
+.cookie-text a { color: #aaa; text-decoration: underline; cursor: pointer; }
+.cookie-text a:hover { color: var(--white); }
+.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-accept {
+  background: var(--white); color: var(--black); border: none;
+  padding: 10px 22px; font-family: 'Montserrat', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+}
+.cookie-accept:hover { background: #ddd; }
+.cookie-decline {
+  background: transparent; color: #555; border: 1px solid #2a2a2a;
+  padding: 10px 18px; font-family: 'Montserrat', sans-serif;
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s;
+}
+.cookie-decline:hover { border-color: #555; color: #aaa; }
+
+/* ===== PRIVACY MODAL ===== */
+.privacy-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.85); align-items: center; justify-content: center;
+  padding: 20px;
+}
+.privacy-overlay.open { display: flex; }
+.privacy-modal {
+  background: #0f0f0f; border: 1px solid #222;
+  max-width: 680px; width: 100%; max-height: 85vh;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.privacy-modal-head {
+  padding: 28px 32px 20px; border-bottom: 1px solid #1a1a1a;
+  display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+}
+.privacy-modal-title {
+  font-family: 'Playfair Display', serif; font-size: 22px;
+  font-weight: 400; color: var(--white);
+}
+.privacy-close {
+  background: none; border: none; color: #555; font-size: 26px;
+  cursor: pointer; line-height: 1; transition: color 0.2s;
+}
+.privacy-close:hover { color: var(--white); }
+.privacy-body {
+  padding: 24px 32px 32px; overflow-y: auto; flex: 1;
+  scrollbar-width: thin; scrollbar-color: #222 transparent;
+}
+.privacy-body h3 {
+  font-family: 'Playfair Display', serif; font-size: 15px;
+  font-weight: 400; color: var(--white); margin: 22px 0 8px;
+}
+.privacy-body h3:first-child { margin-top: 0; }
+.privacy-body p {
+  font-size: 12px; color: #666; line-height: 1.85; margin-bottom: 8px;
+}
+.privacy-body strong { color: #aaa; font-weight: 500; }
+
+@media (max-width: 768px) {
+  .cookie-banner { padding: 16px 20px; }
+  .cookie-btns { width: 100%; }
+  .cookie-accept, .cookie-decline { flex: 1; text-align: center; }
+  .privacy-modal-head { padding: 20px; }
+  .privacy-body { padding: 18px 20px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Professional Academy · Hair & Beauty</div>
+  <ul class="nav-links">
+    <li><a href="#services">Usługi</a></li>
+    <li><a href="#zabiegi">Zabiegi</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#location">Kontakt</a></li>
+    <li>
+      <div class="nav-social">
+        <a class="social-btn" href="https://www.facebook.com/academymichalska/" target="_blank" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+        <a class="social-btn" href="https://www.instagram.com/hair.academy.gdansk/" target="_blank" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      </div>
+    </li>
+  </ul>
+  <a class="nav-cta" href="https://booksy.com/pl-pl/166045_professional-academy-of-hair-and-beauty_fryzjer_20383_gdansk" target="_blank">Zarezerwuj</a>
+
+<!-- HAMBURGER MOBILE MENU -->
+<button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <button class="nav-mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+  <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Usługi</a>
+  <a href="#zabiegi" onclick="document.getElementById('mobileMenu').classList.remove('open')">Zabiegi</a>
+  <a href="#galeria" onclick="document.getElementById('mobileMenu').classList.remove('open')">Galeria</a>
+  <a href="#location" onclick="document.getElementById('mobileMenu').classList.remove('open')">Kontakt</a>
+  <a href="https://booksy.com/pl-pl/166045_professional-academy-of-hair-and-beauty_fryzjer_20383_gdansk" target="_blank" style="background:var(--white);color:var(--black);padding:12px 28px;letter-spacing:2px;font-size:10px;font-weight:600;">Zarezerwuj</a>
+  <div class="nav-mobile-socials">
+    <a href="https://www.facebook.com/academymichalska/" target="_blank"><i class="ti ti-brand-facebook"></i></a>
+    <a href="https://www.instagram.com/hair.academy.gdansk/" target="_blank"><i class="ti ti-brand-instagram"></i></a>
+  </div>
+</div>
+</nav>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item"><span>★</span> Gdańsk · ul. A. Słonimskiego 1/64</div>
+    <div class="ticker-item"><span>✦</span> Ocena 4.9 · 42 opinie</div>
+    <div class="ticker-item"><span>★</span> Keratynowe prostowanie włosów</div>
+    <div class="ticker-item"><span>✦</span> Balayage & Sombre</div>
+    <div class="ticker-item"><span>★</span> Przedłużanie włosów</div>
+    <div class="ticker-item"><span>✦</span> Smoothfiller – regeneracja</div>
+    <div class="ticker-item"><span>★</span> Trichoskopia & analiza skóry głowy</div>
+    <div class="ticker-item"><span>✦</span> Rezerwacja online 24/7</div>
+    <div class="ticker-item"><span>★</span> Gdańsk · ul. A. Słonimskiego 1/64</div>
+    <div class="ticker-item"><span>✦</span> Ocena 4.9 · 42 opinie</div>
+    <div class="ticker-item"><span>★</span> Keratynowe prostowanie włosów</div>
+    <div class="ticker-item"><span>✦</span> Balayage & Sombre</div>
+    <div class="ticker-item"><span>★</span> Przedłużanie włosów</div>
+    <div class="ticker-item"><span>✦</span> Smoothfiller – regeneracja</div>
+    <div class="ticker-item"><span>★</span> Trichoskopia & analiza skóry głowy</div>
+    <div class="ticker-item"><span>✦</span> Rezerwacja online 24/7</div>
+  </div>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="hero-tag">Gdańsk · Profesjonalny Salon</div>
+    <h1>Sztuka<br>pięknych<br><em>włosów</em></h1>
+    <p class="hero-desc">Professional Academy of Hair and Beauty — eksperci od fryzjerstwa, koloryzacji i pielęgnacji. Każda wizyta to wyjątkowe doświadczenie.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://booksy.com/pl-pl/166045_professional-academy-of-hair-and-beauty_fryzjer_20383_gdansk" target="_blank">Zarezerwuj wizytę</a>
+      <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=A.+S%C5%82onimskiego+1%2F64%2C+80-280+Gda%C5%84sk" target="_blank">
+        <i class="ti ti-map-pin"></i> Trasa w Google Maps
+      </a>
+    </div>
+    <div class="hero-social">
+      <a class="hero-social-btn" href="https://www.facebook.com/academymichalska/" target="_blank"><i class="ti ti-brand-facebook"></i> Facebook</a>
+      <a class="hero-social-btn" href="https://www.instagram.com/hair.academy.gdansk/" target="_blank"><i class="ti ti-brand-instagram"></i> Instagram</a>
+      <a class="hero-social-btn" href="https://booksy.com/pl-pl/166045_professional-academy-of-hair-and-beauty_fryzjer_20383_gdansk" target="_blank"><i class="ti ti-calendar"></i> Booksy</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-row">
+      <div><div class="stat-num">4.9</div><div class="stat-label">Ocena klientów</div></div>
+      <div><div class="stat-num">42</div><div class="stat-label">Opinie</div></div>
+    </div>
+    <div class="stat-row">
+      <div><div class="stat-num">15+</div><div class="stat-label">Usług</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-label">Rezerwacja</div></div>
+    </div>
+    <div class="hero-addr">
+      <i class="ti ti-map-pin" style="font-size:13px; margin-right:6px; opacity:.4;"></i>ul. A. Słonimskiego 1/64 · 80-280 Gdańsk<br>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=A.+S%C5%82onimskiego+1%2F64%2C+80-280+Gda%C5%84sk" target="_blank" style="color:#444; font-size:10px; letter-spacing:1px; text-decoration:none; display:inline-block; margin-top:8px;">Wyznacz trasę →</a>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="galeria">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Nasze prace</div>
+      <div class="section-title">Galeria</div>
+    </div>
+    <a class="section-link" href="https://www.facebook.com/academymichalska/" target="_blank">Zobacz więcej na Facebook →</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" onclick="window.open('https://www.facebook.com/academymichalska/','_blank')">
+      <div class="gallery-placeholder">
+        <i class="ti ti-brand-facebook gallery-icon"></i>
+        <div class="gallery-text">Zdjęcia z Facebook<br>academymichalska</div>
+      </div>
+      <div class="gallery-overlay"><div class="gallery-overlay-text">Otwórz Facebook →</div></div>
+    </div>
+    <div class="gallery-item" onclick="window.open('https://www.instagram.com/hair.academy.gdansk/','_blank')">
+      <div class="gallery-placeholder">
+        <i class="ti ti-brand-instagram gallery-icon"></i>
+        <div class="gallery-text">Instagram</div>
+      </div>
+      <div class="gallery-overlay"><div class="gallery-overlay-text">Otwórz Instagram →</div></div>
+    </div>
+    <div class="gallery-item"><div class="gallery-placeholder"><i class="ti ti-photo-plus gallery-icon"></i><div class="gallery-text">Twoje zdjęcie</div></div></div>
+    <div class="gallery-item"><div class="gallery-placeholder"><i class="ti ti-photo-plus gallery-icon"></i><div class="gallery-text">Twoje zdjęcie</div></div></div>
+    <div class="gallery-item"><div class="gallery-placeholder"><i class="ti ti-photo-plus gallery-icon"></i><div class="gallery-text">Twoje zdjęcie</div></div></div>
+  </div>
+
+</section>
+
+<section class="services-section" id="services">
+  <div class="section-header section-header-light">
+    <div>
+      <div class="section-tag" style="color:var(--gray-mid);">Oferta</div>
+      <div class="section-title section-title-dark">Usługi fryzjerskie</div>
+    </div>
+  </div>
+  <div class="cat-tabs" id="catTabs">
+    <button class="cat-tab active" data-cat="all">Wszystkie</button>
+    <button class="cat-tab" data-cat="damski">Damskie</button>
+    <button class="cat-tab" data-cat="meskie">Męskie</button>
+    <button class="cat-tab" data-cat="kolor">Koloryzacja</button>
+    <button class="cat-tab" data-cat="pielegnacja">Pielęgnacja</button>
+    <button class="cat-tab" data-cat="przedluz">Przedłużanie</button>
+  </div>
+  <div class="services-grid" id="servicesGrid"></div>
+</section>
+
+<section class="care-section" id="zabiegi">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Specjalistyczne</div>
+      <div class="section-title">Zabiegi premium</div>
+    </div>
+  </div>
+  <div class="care-grid" id="careGrid"></div>
+</section>
+
+<section class="location-section" id="location">
+  <div class="section-header section-header-light">
+    <div>
+      <div class="section-tag" style="color:var(--gray-mid);">Znajdź nas</div>
+      <div class="section-title section-title-dark">Lokalizacja</div>
+    </div>
+  </div>
+  <div class="location-grid">
+    <div class="location-map">
+      <iframe class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2323.1!2d18.6038!3d54.4026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd73862c3e6b55%3A0x9b87c3c68a54e7a0!2sA.%20S%C5%82onimskiego%201%2C%2080-280%20Gda%C5%84sk!5e0!3m2!1spl!2spl!4v1700000000000"
+        allowfullscreen="" loading="lazy" title="Mapa salonu">
+      </iframe>
+    </div>
+    <div class="location-info">
+      <div>
+        <div class="loc-tag">Adres</div>
+        <div class="loc-title">Odwiedź nas<br>w Gdańsku</div>
+        <div class="loc-detail">
+          <strong>ul. A. Słonimskiego 1/64</strong><br>
+          80-280 Gdańsk<br><br>
+          Rezerwacje: <strong>Booksy 24/7</strong><br>
+          Facebook: <strong>@academymichalska</strong><br>
+          Instagram: <strong>@hair.academy.gdansk</strong>
+        </div>
+      </div>
+      <div>
+        <a class="maps-big-btn" href="https://www.google.com/maps/dir/?api=1&destination=A.+S%C5%82onimskiego+1%2F64%2C+80-280+Gda%C5%84sk" target="_blank">
+          <i class="ti ti-navigation"></i> Wyznacz trasę w Google Maps
+        </a>
+        <div class="social-row">
+          <a class="social-pill" href="https://www.facebook.com/academymichalska/" target="_blank"><i class="ti ti-brand-facebook"></i> Facebook</a>
+          <a class="social-pill" href="https://www.instagram.com/hair.academy.gdansk/" target="_blank"><i class="ti ti-brand-instagram"></i> Instagram</a>
+          <a class="social-pill booksy-pill" href="https://booksy.com/pl-pl/166045_professional-academy-of-hair-and-beauty_fryzjer_20383_gdansk" target="_blank"><i class="ti ti-calendar"></i> Booksy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="section-header section-header-light">
+    <div>
+      <div class="section-tag" style="color:var(--gray-mid);">Klienci o nas</div>
+      <div class="section-title section-title-dark">Opinie</div>
+    </div>
+    <div style="font-family:'Playfair Display',serif; font-size:28px; font-weight:700;">4.9 <span style="font-size:13px; font-weight:400; color:var(--gray-mid); font-family:'Montserrat',sans-serif; letter-spacing:2px;">/ 42 opinie</span></div>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid"></div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">Professional Academy<br>of Hair and Beauty</div>
+    <div class="footer-desc">Ekspertki od fryzjerstwa i beauty w sercu Gdańska. Zarezerwuj wizytę online przez Booksy — dostępność 24/7.</div>
+    <div class="footer-social">
+      <a class="footer-social-btn" href="https://www.facebook.com/academymichalska/" target="_blank"><i class="ti ti-brand-facebook"></i> Facebook</a>
+      <a class="footer-social-btn" href="https://www.instagram.com/hair.academy.gdansk/" target="_blank"><i class="ti ti-brand-instagram"></i> Instagram</a>
+      <a class="footer-social-btn" href="https://www.google.com/maps/dir/?api=1&destination=A.+S%C5%82onimskiego+1%2F64%2C+80-280+Gda%C5%84sk" target="_blank"><i class="ti ti-map-pin"></i> Mapa</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Usługi</div>
+    <ul class="footer-list">
+      <li>Strzyżenie damskie</li><li>Balayage / Sombre</li><li>Keratynowe prostowanie</li>
+      <li>Przedłużanie włosów</li><li>Smoothfiller</li><li>Airtouch</li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Kontakt</div>
+    <ul class="footer-list">
+      <li>ul. A. Słonimskiego 1/64</li><li>80-280 Gdańsk</li>
+      <li><a href="https://www.google.com/maps/dir/?api=1&destination=A.+S%C5%82onimskiego+1%2F64%2C+80-280+Gda%C5%84sk" target="_blank" style="color:#555; text-decoration:none;">Wyznacz trasę →</a></li>
+      <li><a href="https://booksy.com/pl-pl/166045_professional-academy-of-hair-and-beauty_fryzjer_20383_gdansk" target="_blank" style="color:#555; text-decoration:none;">Rezerwuj przez Booksy →</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Professional Academy of Hair and Beauty · Gdańsk &nbsp;·&nbsp; <a onclick="openPrivacy()" style="color:#444; text-decoration:underline; cursor:pointer;">Polityka prywatności</a></span>
+  <div style="display:flex; gap:16px;">
+    <a href="https://www.facebook.com/academymichalska/" target="_blank" style="color:#333; text-decoration:none;"><i class="ti ti-brand-facebook"></i></a>
+    <a href="https://www.instagram.com/hair.academy.gdansk/" target="_blank" style="color:#333; text-decoration:none;"><i class="ti ti-brand-instagram"></i></a>
+  </div>
+</div>
+
+<script>
+const services = [
+  {name:"Strzyżenie damskie + modelowanie",price:"od 140 zł",time:"1 godz.",cat:"damski",popular:true},
+  {name:"Strzyżenie damskie – długie",price:"180 zł",time:"1 godz.",cat:"damski"},
+  {name:"Czesanie wł. krótkie / średnie / długie",price:"90–120 zł",time:"1 godz.",cat:"damski"},
+  {name:"Fale",price:"150 zł",time:"1 godz.",cat:"damski"},
+  {name:"Kok",price:"250 zł",time:"1 godz.",cat:"damski"},
+  {name:"Upięcie ślubne",price:"od 350 zł",time:"1 godz.",cat:"damski",popular:true},
+  {name:"Airtouch",price:"850 zł",time:"5 godz.",cat:"damski",popular:true},
+  {name:"Grzywka",price:"35 zł",time:"15 min",cat:"damski"},
+  {name:"Trwała",price:"340–550 zł",time:"2,5 godz.",cat:"damski"},
+  {name:"Strzyżenie",price:"85 zł",time:"1 godz.",cat:"meskie"},
+  {name:"Strzyżenie maszynką",price:"55 zł",time:"30 min",cat:"meskie"},
+  {name:"Strzyżenie brody",price:"40 zł",time:"15 min",cat:"meskie"},
+  {name:"Odsiwianie",price:"85 zł",time:"30 min",cat:"meskie"},
+  {name:"Balayage komplet",price:"od 400 zł",time:"3 godz.",cat:"kolor",popular:true},
+  {name:"Balayage + farba",price:"od 420 zł",time:"3 godz.",cat:"kolor"},
+  {name:"Sombre / Balejaż niteczkowy",price:"od 540 zł",time:"3 godz.",cat:"kolor",popular:true},
+  {name:"Farbowanie komplet",price:"od 340 zł",time:"2 godz.",cat:"kolor"},
+  {name:"Dekoloryzacja",price:"od 550 zł",time:"3,5 godz.",cat:"kolor"},
+  {name:"Keratynowe prostowanie",price:"od 400 zł",time:"2,5 godz.",cat:"pielegnacja",popular:true},
+  {name:"Ampułka + maska",price:"150 zł",time:"1 godz.",cat:"pielegnacja"},
+  {name:"Keratin oil + hydro",price:"170 zł",time:"1 godz.",cat:"pielegnacja"},
+  {name:"Dermabrazja skóry głowy",price:"150 zł",time:"1 godz.",cat:"pielegnacja"},
+  {name:"Kuracja keratynowa",price:"150 zł",time:"1 godz.",cat:"pielegnacja"},
+  {name:"Analiza skóry głowy / Trichoskopia",price:"100 zł",time:"1 godz.",cat:"pielegnacja"},
+  {name:"Polerowanie włosów",price:"90–170 zł",time:"1 godz.",cat:"pielegnacja"},
+  {name:"Smoothfiller – wygładzanie",price:"od 400 zł",time:"2,5 godz.",cat:"przedluz",popular:true},
+  {name:"Przedłużanie – metoda keratynowa",price:"od 1000 zł",time:"3 godz.",cat:"przedluz"},
+  {name:"Przedłużanie – tape on",price:"od 600 zł",time:"2 godz.",cat:"przedluz"},
+  {name:"Konsultacja – doczepianie",price:"bezpłatna",time:"30 min",cat:"przedluz"},
+];
+const care = [
+  {num:"01",name:"Keratynowe prostowanie",desc:"Wygładzanie z keratyną. Efekt do 6 miesięcy dla wszystkich długości.",price:"od 400 zł · 2h 30min"},
+  {num:"02",name:"Smoothfiller",desc:"Zaawansowana regeneracja i wygładzanie. Efekt widoczny od razu po zabiegu.",price:"od 400 zł · 2h 30min"},
+  {num:"03",name:"Trichoskopia",desc:"Profesjonalna analiza skóry głowy. Diagnoza i rekomendacja pielęgnacji.",price:"100 zł · 1h"},
+  {num:"04",name:"Dermabrazja skóry głowy",desc:"Głębokie oczyszczanie i peeling. Stymuluje mikrokrążenie.",price:"150 zł · 1h"},
+  {num:"05",name:"Kuracja keratynowa",desc:"Intensywna odbudowa struktury włosa. Eliminuje puszenie.",price:"150 zł · 1h"},
+  {num:"06",name:"Ampułka + maska",desc:"Dwuetapowy zabieg nawilżający. Idealny po koloryzacji.",price:"150 zł · 1h"},
+];
+const reviews = [
+  {text:"Bardzo miła obsługa, czysto i profesjonalnie. Polecam! Zdecydowanie wrócę.",author:"Klaudia",service:"Włosy średnie",date:"mar 2026"},
+  {text:"Fantastic service! Love the professionalism. Knew exactly the perfect shade!",author:"Monica",service:"Sombre / Balejaż",date:"mar 2026"},
+  {text:"Jak zawsze cudny blond.",author:"Agnieszka",service:"Włosy długie",date:"mar 2026"},
+  {text:"Profesjonalna i przesympatyczna obsługa.",author:"Małgorzata",service:"Włosy długie",date:"sty 2026"},
+  {text:"Kolejna wizyta i po raz kolejny tak samo zadowolona. Profesjonalne podejście.",author:"Julia",service:"Sombre / Balejaż",date:"gru 2025"},
+  {text:"Piękne włosy, bardzo polecam.",author:"Julia",service:"Włosy długie",date:"lip 2025"},
+];
+function renderServices(cat) {
+  const list = cat === "all" ? services : services.filter(s => s.cat === cat);
+  document.getElementById("servicesGrid").innerHTML = list.map(s => `
+    <div class="service-card">
+      ${s.popular ? '<div class="service-tag">Popularne</div>' : ''}
+      <div class="service-name">${s.name}</div>
+      <div class="service-price">${s.price}</div>
+      <div class="service-time">${s.time}</div>
+    </div>`).join('');
+}
+document.getElementById("careGrid").innerHTML = care.map(c => `
+  <div class="care-card">
+    <div class="care-card-num">${c.num}</div>
+    <div class="care-card-name">${c.name}</div>
+    <div class="care-card-desc">${c.desc}</div>
+    <div class="care-card-price">${c.price}</div>
+  </div>`).join('');
+document.getElementById("reviewsGrid").innerHTML = reviews.map(r => `
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">"${r.text}"</div>
+    <div class="review-meta">${r.author}</div>
+    <div class="review-service">${r.service} · ${r.date}</div>
+  </div>`).join('');
+document.getElementById("catTabs").addEventListener("click", e => {
+  const t = e.target.closest(".cat-tab");
+  if (!t) return;
+  document.querySelectorAll(".cat-tab").forEach(x => x.classList.remove("active"));
+  t.classList.add("active");
+  renderServices(t.dataset.cat);
+});
+renderServices("all");
+
+// COOKIE BANNER
+function initCookie() {
+  if (!localStorage.getItem('cookieConsent')) {
+    setTimeout(() => document.getElementById('cookieBanner').classList.add('visible'), 800);
+  }
+}
+function closeCookie(accepted) {
+  localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined');
+  document.getElementById('cookieBanner').classList.remove('visible');
+}
+function openPrivacy() {
+  document.getElementById('privacyOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePrivacy() {
+  document.getElementById('privacyOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closePrivacyOutside(e) {
+  if (e.target === document.getElementById('privacyOverlay')) closePrivacy();
+}
+initCookie();
+</script>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-text">
+    Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie.
+    Klikając „Akceptuj", zgadzasz się na ich użycie zgodnie z naszą
+    <a onclick="openPrivacy()">Polityką prywatności</a>.
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="closeCookie(false)">Odrzuć</button>
+    <button class="cookie-accept" onclick="closeCookie(true)">Akceptuj</button>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="privacy-overlay" id="privacyOverlay" onclick="closePrivacyOutside(event)">
+  <div class="privacy-modal">
+    <div class="privacy-modal-head">
+      <div class="privacy-title" style="font-family:'Playfair Display',serif; font-size:22px; color:var(--white);">Polityka prywatności</div>
+      <button class="privacy-close" onclick="closePrivacy()">&times;</button>
+    </div>
+    <div class="privacy-body">
+      <h3>1. Administrator danych</h3>
+      <p>Administratorem danych osobowych jest <strong>Professional Academy of Hair and Beauty</strong>, ul. A. Słonimskiego 1/64, 80-280 Gdańsk. Kontakt: przez Facebook @academymichalska lub Instagram @hair.academy.gdansk.</p>
+
+      <h3>2. Jakie dane zbieramy</h3>
+      <p>Zbieramy dane podawane dobrowolnie podczas rezerwacji wizyt przez Booksy (imię, numer telefonu, adres e-mail) oraz dane techniczne zbierane automatycznie (pliki cookie, adres IP, typ przeglądarki).</p>
+
+      <h3>3. W jakim celu przetwarzamy dane</h3>
+      <p>Dane osobowe przetwarzamy w celu: realizacji rezerwacji wizyt i świadczenia usług fryzjersko-kosmetycznych, kontaktu z klientem w sprawach związanych z wizytą, poprawy jakości usług i strony internetowej.</p>
+
+      <h3>4. Pliki cookie</h3>
+      <p>Nasza strona używa plików cookie – małych plików tekstowych zapisywanych na Twoim urządzeniu. Używamy ich do zapewnienia prawidłowego działania strony oraz analizy ruchu. Możesz wyłączyć pliki cookie w ustawieniach przeglądarki, jednak może to wpłynąć na działanie niektórych funkcji strony.</p>
+      <p><strong>Typy plików cookie:</strong> niezbędne (wymagane do działania strony), analityczne (zbierają anonimowe dane o korzystaniu ze strony), funkcjonalne (zapamiętują Twoje preferencje).</p>
+
+      <h3>5. Podstawa prawna</h3>
+      <p>Przetwarzanie danych odbywa się na podstawie: Twojej zgody (art. 6 ust. 1 lit. a RODO), wykonania umowy lub podjęcia działań przed jej zawarciem (art. 6 ust. 1 lit. b RODO) oraz prawnie uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO).</p>
+
+      <h3>6. Twoje prawa</h3>
+      <p>Masz prawo do: dostępu do swoich danych, ich sprostowania, usunięcia („prawo do bycia zapomnianym"), ograniczenia przetwarzania, przenoszenia danych, wniesienia sprzeciwu wobec przetwarzania, cofnięcia zgody w dowolnym momencie. Możesz też wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO).</p>
+
+      <h3>7. Przekazywanie danych</h3>
+      <p>Dane mogą być przekazywane do <strong>Booksy</strong> (platforma rezerwacji) zgodnie z ich polityką prywatności. Nie sprzedajemy danych osobowych podmiotom trzecim.</p>
+
+      <h3>8. Okres przechowywania</h3>
+      <p>Dane przechowujemy przez czas niezbędny do realizacji usług oraz przez okres wymagany przepisami prawa, nie dłużej niż 3 lata od ostatniej wizyty.</p>
+
+      <h3>9. Zmiany polityki</h3>
+      <p>Zastrzegamy sobie prawo do zmiany niniejszej polityki prywatności. Wszelkie zmiany będą publikowane na tej stronie. Ostatnia aktualizacja: <strong>czerwiec 2026</strong>.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
